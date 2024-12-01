@@ -2,9 +2,7 @@
 #define STUDENT_H_INCLUDED
 
 #include <iostream>
-
-typedef struct Student studentInfo;
-typedef struct ElmStudent *elmStudent;
+using namespace std;
 
 struct Student {
     string nidn;
@@ -13,10 +11,14 @@ struct Student {
     string gender;
 };
 
+typedef struct Student studentInfo;
+typedef struct ElmStudent *elmStudent;
+
 struct ElmStudent {
     studentInfo info;
     elmStudent next;
 };
+
 
 // contract methods
 

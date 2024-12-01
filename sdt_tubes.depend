@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1733071875 source:d:\kuliah\semester 3\std\tugas besar\final-project-data-structure\main.cpp
+	<iostream>
+
+1733071875 source:d:\kuliah\semester 3\std\tugas besar\final-project-data-structure\student.cpp
+	<iostream>
+	"student.h"
+
+1733072327 d:\kuliah\semester 3\std\tugas besar\final-project-data-structure\student.h
+	<iostream>
+
+1733071875 source:d:\kuliah\semester 3\std\tugas besar\final-project-data-structure\lecturer.cpp
+	<iostream>
+	"lecturer.h"
+
+1733072463 d:\kuliah\semester 3\std\tugas besar\final-project-data-structure\lecturer.h
+	<iostream>
+	<string>
+
