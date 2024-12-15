@@ -8,15 +8,15 @@ void createListLecturer(ListLecturer &L) {
     Last(L) = nullptr;
 }
 
-address createElementLecturer(infotypeLecturer dataBaru) {
-    address P = new ElmLecturer;
+elmLecturer createElementLecturer(infotypeLecturer dataBaru) {
+    elmLecturer P = new ElmLecturer;
     info(P) = dataBaru;
     next(P) = nullptr;
     prev(P) = nullptr;
     return P;
 }
 
-void insertLastLecturer(ListLecturer &L, address P) {
+void insertLastLecturer(ListLecturer &L, elmLecturer P) {
     if (First(L) == nullptr) {
         First(L) = P;
         Last(L) = P;
@@ -27,7 +27,7 @@ void insertLastLecturer(ListLecturer &L, address P) {
     }
 }
 
-void deleteFirstLecturer(ListLecturer &L, address &P) {
+void deleteFirstLecturer(ListLecturer &L, elmLecturer &P) {
     if (First(L) != nullptr) {
         P = First(L);
         if (First(L) == Last(L)) {
@@ -41,7 +41,7 @@ void deleteFirstLecturer(ListLecturer &L, address &P) {
     }
 }
 
-void deleteLastLecturer(ListLecturer &L, address &P) {
+void deleteLastLecturer(ListLecturer &L, elmLecturer &P) {
     if (Last(L) != nullptr) {
         P = Last(L);
         if (First(L) == Last(L)) {
@@ -55,7 +55,7 @@ void deleteLastLecturer(ListLecturer &L, address &P) {
     }
 }
 
-void deleteAfterLecturer(ListLecturer &L, address Prec, address &P) {
+void deleteAfterLecturer(ListLecturer &L, elmLecturer Prec, elmLecturer &P) {
     if (Prec != nullptr && next(Prec) != nullptr) {
         P = next(Prec);
         next(Prec) = next(P);
@@ -69,12 +69,12 @@ void deleteAfterLecturer(ListLecturer &L, address Prec, address &P) {
     }
 }
 
-void deleteLecturerByNip(ListLecturer &L, address &P, string nip) {
+void deleteLecturerByNip(ListLecturer &L, elmLecturer &P, string nip) {
     if (First(L) == nullptr) {
         cout << "List kosong" << endl;
     } else {
-        address Q = First(L);
-        address Prec = nullptr;
+        elmLecturer Q = First(L);
+        elmLecturer Prec = nullptr;
 
         while (Q != nullptr) {
             if (info(Q).nip == nip) {
@@ -97,7 +97,7 @@ void printListLecturer(ListLecturer L) {
     if (First(L) == nullptr) {
         cout << "List kosong" << endl;
     } else {
-        address P = First(L);
+        elmLecturer P = First(L);
         while (P != nullptr) {
             cout << "NIP  : " << info(P).nip << endl;
             cout << "Nama : " << info(P).name << endl;
@@ -109,11 +109,11 @@ void printListLecturer(ListLecturer L) {
     }
 }
 
-void findListLecturer(ListLecturer L, string nip) {
+void findListLecturerByNip(ListLecturer L, string nip) {
     if (First(L) == nullptr) {
         cout << "List kosong" << endl;
     } else {
-        address P = First(L);
+        elmLecturer P = First(L);
         bool isExists = false;
         while (P != nullptr) {
             if (info(P).nip == nip) {
@@ -130,5 +130,44 @@ void findListLecturer(ListLecturer L, string nip) {
         }
 
         if (!isExists) cout << "Data tidak ditemukan" << endl;
+    }
+}
+
+void findListLecturerByName(ListLecturer L, string name) {
+    if (First(L) == nullptr) {
+        cout << "List kosong" << endl;
+    } else {
+        elmLecturer P = First(L);
+        bool isExists = false;
+        while (P != nullptr) {
+            if (info(P).name == name) {
+                isExists = true;
+
+                cout << "NIP  : " << info(P).nip << endl;
+                cout << "Nama : " << info(P).name << endl;
+                cout << "Kode : " << info(P).code << endl;
+                cout << "Umur : " << info(P).age << endl;
+                cout << "-----------------" << endl;
+                break;
+            }
+            P = next(P);
+        }
+
+        if (!isExists) cout << "Data tidak ditemukan" << endl;
+    }
+}
+
+elmLecturer findLecturer(ListLecturer L, string nip) {
+    if (First(L) == nullptr) {
+        return NULL;
+    } else {
+        elmLecturer P = First(L);
+        while (P != nullptr) {
+            if (info(P).nip == nip) {
+                return P;
+                break;
+            }
+            P = next(P);
+        }
     }
 }

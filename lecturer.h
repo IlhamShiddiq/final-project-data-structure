@@ -21,27 +21,29 @@ struct Lecturer {
 };
 
 typedef struct Lecturer infotypeLecturer;
-typedef struct ElmLecturer *address;
+typedef struct ElmLecturer *elmLecturer;
 
 struct ElmLecturer {
     infotypeLecturer info;
-    address next;
-    address prev;
+    elmLecturer next;
+    elmLecturer prev;
 };
 
 struct ListLecturer {
-    address First;
-    address Last;
+    elmLecturer First;
+    elmLecturer Last;
 };
 
 void createListLecturer(ListLecturer &L);
-address createElementLecturer(infotypeLecturer dataBaru);
-void insertLastLecturer(ListLecturer &L, address P);
-void deleteFirstLecturer(ListLecturer &L, address &P);
-void deleteLastLecturer(ListLecturer &L, address &P);
-void deleteAfterLecturer(ListLecturer &L, address Prec, address &P);
-void deleteLecturerByNip(ListLecturer &L, address &P, string nip);
+elmLecturer createElementLecturer(infotypeLecturer dataBaru);
+void insertLastLecturer(ListLecturer &L, elmLecturer P);
+void deleteFirstLecturer(ListLecturer &L, elmLecturer &P);
+void deleteLastLecturer(ListLecturer &L, elmLecturer &P);
+void deleteAfterLecturer(ListLecturer &L, elmLecturer Prec, elmLecturer &P);
+void deleteLecturerByNip(ListLecturer &L, elmLecturer &P, string nip);
 void printListLecturer(ListLecturer L);
-void findListLecturer(ListLecturer L, string nip);
+void findListLecturerByNip(ListLecturer L, string nip);
+void findListLecturerByName(ListLecturer L, string name);
+elmLecturer findLecturer(ListLecturer L, string nip);
 
 #endif // LECTURER_H_INCLUDED

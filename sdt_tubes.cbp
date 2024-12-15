@@ -35,6 +35,8 @@
 		<Unit filename="lecturer.cpp" />
 		<Unit filename="lecturer.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="relation.cpp" />
+		<Unit filename="relation.h" />
 		<Unit filename="student.cpp" />
 		<Unit filename="student.h" />
 		<Extensions>

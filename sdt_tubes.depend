@@ -17,3 +17,32 @@
 	<iostream>
 	<string>
 
+1734250390 source:c:\users\paninti\documents\ilham shiddiq\college\praktikum struktur data\week 12\final-project-data-structure\lecturer.cpp
+	<iostream>
+	"lecturer.h"
+
+1734250390 c:\users\paninti\documents\ilham shiddiq\college\praktikum struktur data\week 12\final-project-data-structure\lecturer.h
+	<iostream>
+	<string>
+
+1734262017 source:c:\users\paninti\documents\ilham shiddiq\college\praktikum struktur data\week 12\final-project-data-structure\main.cpp
+	<iostream>
+	<cstdlib>
+	"lecturer.h"
+	"student.h"
+	"relation.h"
+
+1734246896 source:c:\users\paninti\documents\ilham shiddiq\college\praktikum struktur data\week 12\final-project-data-structure\student.cpp
+	"student.h"
+
+1734250158 c:\users\paninti\documents\ilham shiddiq\college\praktikum struktur data\week 12\final-project-data-structure\student.h
+	<iostream>
+	<string>
+
+1734262154 source:c:\users\paninti\documents\ilham shiddiq\college\praktikum struktur data\week 12\final-project-data-structure\relation.cpp
+	"relation.h"
+
+1734261984 c:\users\paninti\documents\ilham shiddiq\college\praktikum struktur data\week 12\final-project-data-structure\relation.h
+	"lecturer.h"
+	"student.h"
+
