@@ -5,21 +5,43 @@
 #include <string>
 using namespace std;
 
-typedef struct Lecturer lecturerInfo;
-typedef struct ElmLecturer *elmLecturer;
+#define First(L) ((L).First)
+#define Last(L) ((L).Last)
+#define info(P) ((P)->info)
+#define next(P) ((P)->next)
+#define prev(P) ((P)->prev)
+
+using namespace std;
 
 struct Lecturer {
-    string nidn;
+    string nip;
     string name;
     string code;
-    string gender;
+    string age;
 };
+
+typedef struct Lecturer infotypeLecturer;
+typedef struct ElmLecturer *address;
 
 struct ElmLecturer {
-    lecturerInfo info;
-    elmLecturer next;
+    infotypeLecturer info;
+    address next;
+    address prev;
 };
 
-// contract methods
+struct ListLecturer {
+    address First;
+    address Last;
+};
+
+void createListLecturer(ListLecturer &L);
+address createElementLecturer(infotypeLecturer dataBaru);
+void insertLastLecturer(ListLecturer &L, address P);
+void deleteFirstLecturer(ListLecturer &L, address &P);
+void deleteLastLecturer(ListLecturer &L, address &P);
+void deleteAfterLecturer(ListLecturer &L, address Prec, address &P);
+void deleteLecturerByNip(ListLecturer &L, address &P, string nip);
+void printListLecturer(ListLecturer L);
+void findListLecturer(ListLecturer L, string nip);
 
 #endif // LECTURER_H_INCLUDED
